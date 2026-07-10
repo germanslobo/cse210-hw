@@ -1,3 +1,13 @@
+/*
+================================================================================
+CREATIVITY & EXCEEDING REQUIREMENTS DOCUMENTATION:
+1. Added an explicit 'Clear/Reset Journal' functionality (Option 5 in the menu).
+2. Created a corresponding 'ClearAll()' method inside the Journal class that 
+   instantly clears the active memory list (_entries.Clear()), allowing the user 
+   to completely reset their session without restarting the program.
+================================================================================
+*/
+
 using System;
 using System.Collections.Generic;
 
