@@ -11,17 +11,17 @@ public abstract class Activity
         _minutes = minutes;
     }
 
-    public string Date => _date;
-    public double Minutes => _minutes;
+    // Encapsulated property allowing child classes to access length in minutes
+    protected double Minutes => _minutes;
 
-    // Abstract methods to be overridden by derived classes
-    public abstract double GetDistance(); // returns miles or km
-    public abstract double GetSpeed();    // returns mph or kph
-    public abstract double GetPace();     // returns min per mile/km
+    // Abstract calculation methods required by the base class
+    public abstract double GetDistance();
+    public abstract double GetSpeed();
+    public abstract double GetPace();
 
-    // Base implementation of GetSummary using polymorphic method calls
+    // Base implementation calling polymorphic methods (not overridden in child classes)
     public virtual string GetSummary()
     {
-        return $"{_date} {GetType().Name} ({_minutes} min) - Distance {GetDistance():F1} km, Speed {GetSpeed():F1} kph, Pace: {GetPace():F2} min per km";
+        return $"{_date} {GetType().Name} ({_minutes} min) - Distance: {GetDistance():F1} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F2} min per km";
     }
 }
